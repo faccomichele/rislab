@@ -8,6 +8,5 @@ WORKDIR /rislab
 ADD Gemfile /rislab/Gemfile
 ADD Gemfile.lock /rislab/Gemfile.lock
 RUN bundle install
+RUN rails new . --force
 ADD ./railsrislab /rislab
-
-CMD ["rails", "server"]
