@@ -1,4 +1,4 @@
-FROM ruby
+FROM ruby:2.4.1
 
 MAINTAINER Michele Facco <faccomichele@gmail.com>
 
