@@ -10,4 +10,5 @@ WORKDIR ${dir}
 ADD Gemfile ${dir}/Gemfile
 ADD Gemfile.lock ${dir}/Gemfile.lock
 RUN bundle install
-RUN rails new ${dir} --force
+ADD railsrislab/ ${dir}
+RUN bundle install
