@@ -13,3 +13,12 @@ two:
   mac: MyString
   description: MyText
   devtype: 9.99
+
+r510_server:
+  name: R510_Server
+  ip: 10.10.10.10
+  mac: 00:00:00:11:11:11
+  description:
+    none for now
+    fuck off!
+  devtype: 7

@@ -3,6 +3,13 @@ require 'test_helper'
 class DevicesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @device = devices(:one)
+    @update = {
+      name: 'Lorem Ipsum',
+      description: 'Wibbles are fun!',
+      ip: '1.1.1.1',
+      mac: '00:00:00:FF:FF:FF',
+      type: 20
+    }
   end
 
   test "should get index" do
@@ -17,7 +24,7 @@ class DevicesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create device" do
     assert_difference('Device.count') do
-      post devices_url, params: { device: { description: @device.description, devtype: @device.devtype, ip: @device.ip, mac: @device.mac, name: @device.name } }
+      post devices_url, params: { device: @update }
     end
 
     assert_redirected_to device_url(Device.last)
@@ -34,7 +41,7 @@ class DevicesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update device" do
-    patch device_url(@device), params: { device: { description: @device.description, devtype: @device.devtype, ip: @device.ip, mac: @device.mac, name: @device.name } }
+    patch device_url(@device), params: { device: @update }
     assert_redirected_to device_url(@device)
   end
 
