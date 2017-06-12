@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170610170546) do
+ActiveRecord::Schema.define(version: 20170612180602) do
+
+  create_table "device_types", force: :cascade do |t|
+    t.string "Name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "devices", force: :cascade do |t|
     t.string "name"
@@ -18,6 +24,13 @@ ActiveRecord::Schema.define(version: 20170610170546) do
     t.string "mac"
     t.text "description"
     t.decimal "devtype"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

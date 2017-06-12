@@ -2,13 +2,17 @@
 
 <h1>Your Pragmatic List</h1>
 
-<% @devices.each do |device| %>
-  <div class="entry">
-    <%-# image_tag(product.image_url) -%>
-    <h3><%= device.name %></h3>
-    <%= sanitize(device.description) %>
-    <div class="type_line">
-      <span class="type"><%= device.devtype %></span>
-    </div>
-  </div>
+<% cache @devices do %>
+  <% @devices.each do |device| %>
+    <% cache device do %>
+      <div class="entry">
+        <%-# image_tag(product.image_url) -%>
+        <h3><%= device.name %></h3>
+        <%= sanitize(device.description) %>
+        <div class="type_line">
+          <span class="type"><%= device.devtype %></span>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 <% end %>
