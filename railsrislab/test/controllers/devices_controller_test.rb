@@ -8,7 +8,7 @@ class DevicesControllerTest < ActionDispatch::IntegrationTest
       description: 'Wibbles are fun!',
       ip: '1.1.1.1',
       mac: '00:00:00:FF:FF:FF',
-      type: 20
+      devtype: 20
     }
   end
 

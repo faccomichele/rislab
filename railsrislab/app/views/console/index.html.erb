@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Your Pragmatic List</h1>
+
+<% @devices.each do |device| %>
+  <div class="entry">
+    <%-# image_tag(product.image_url) -%>
+    <h3><%= device.name %></h3>
+    <%= sanitize(device.description) %>
+    <div class="type_line">
+      <span class="type"><%= device.devtype %></span>
+    </div>
+  </div>
+<% end %>
