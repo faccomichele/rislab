@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170610153706) do
+ActiveRecord::Schema.define(version: 20170610170546) do
 
   create_table "devices", force: :cascade do |t|
     t.string "name"
     t.string "ip"
     t.string "mac"
     t.text "description"
-    t.decimal "type"
+    t.decimal "devtype"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

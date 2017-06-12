@@ -5,11 +5,11 @@ one:
   ip: MyString
   mac: MyString
   description: MyText
-  type: 9.99
+  devtype: 9.99
 
 two:
   name: MyString
   ip: MyString
   mac: MyString
   description: MyText
-  type: 9.99
+  devtype: 9.99
