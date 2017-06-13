@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class DeviceTest < ActiveSupport::TestCase
-  fixtures :devices
 
   test "device attributes must not be empty" do
     device = Device.new
