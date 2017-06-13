@@ -19,7 +19,7 @@
         <td><%= template_volume.name %></td>
         <td><%= template_volume.iscsiname %></td>
         <td><%= template_volume.description %></td>
-        <td><%= @os_types.find{ |os_type| os_type.id == template_volume.os_type_id }.name %></td>
+        <td><%= @os_types.find{|os_type| os_type.id == template_volume.os_type}.name %></td>
         <td><%= link_to 'Show', template_volume %></td>
         <td><%= link_to 'Edit', edit_template_volume_path(template_volume) %></td>
         <td><%= link_to 'Destroy', template_volume, method: :delete, data: { confirm: 'Are you sure?' } %></td>
