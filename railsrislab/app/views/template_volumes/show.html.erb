@@ -17,7 +17,7 @@
 
 <p>
   <strong>Os type:</strong>
-  <%= @os_types.find{|os_type| os_type.id == @template_volume.os_type}.name %>
+  <%= @os_types.find{|os_type| os_type.id == @template_volume.os_type_id}.name %>
 </p>
 
 <%= link_to 'Edit', edit_template_volume_path(@template_volume) %> |
