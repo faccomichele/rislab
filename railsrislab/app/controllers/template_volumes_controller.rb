@@ -11,6 +11,7 @@ class TemplateVolumesController < ApplicationController
   # GET /template_volumes/1
   # GET /template_volumes/1.json
   def show
+    @os_types = OsType.all
   end
 
   # GET /template_volumes/new
