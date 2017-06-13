@@ -5,6 +5,7 @@ class TemplateVolumesController < ApplicationController
   # GET /template_volumes.json
   def index
     @template_volumes = TemplateVolume.order(:name)
+    @os_types = OsType.all
   end
 
   # GET /template_volumes/1
