@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @template_volume.name %>
+</p>
+
+<p>
+  <strong>Iscsiname:</strong>
+  <%= @template_volume.iscsiname %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @template_volume.description %>
+</p>
+
+<p>
+  <strong>Os type:</strong>
+  <%= @template_volume.os_type %>
+</p>
+
+<%= link_to 'Edit', edit_template_volume_path(@template_volume) %> |
+<%= link_to 'Back', template_volumes_path %>

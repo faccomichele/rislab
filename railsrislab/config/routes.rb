@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :template_volumes
+  resources :os_types
   get 'admin' => 'admin#index'
 
   controller :sessions do

@@ -4,7 +4,7 @@ class DevicesController < ApplicationController
   # GET /devices
   # GET /devices.json
   def index
-    @devices = Device.all
+    @devices = Device.order(:name)
   end
 
   # GET /devices/1
@@ -69,6 +69,6 @@ class DevicesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def device_params
-      params.require(:device).permit(:name, :ip, :mac, :description, :devtype)
+      params.require(:device).permit(:name, :ip, :mac, :description, :device_type_id)
     end
 end

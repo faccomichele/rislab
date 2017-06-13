@@ -32,8 +32,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :devtype %>
-    <%= form.text_field :devtype, id: :device_devtype %>
+    <%= form.label :device_type_id %>
+    <%= form.select :device_type_id, DeviceType.order(:name).collect {|p| [p.name, p.id]}, prompt: 'Select a Device Type' %>
   </div>
 
   <div class="actions">

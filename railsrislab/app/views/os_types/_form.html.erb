@@ -1,0 +1,28 @@
+<div class='rislab_form'>
+  <%= form_for @os_type do |form| %>
+    <% if @os_type.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@os_type.errors.count, "error") %> prohibited this os_type from being saved:</h2>
+
+        <ul>
+          <% @os_type.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <fieldset>
+      <legend>Enter OS Type Details</legend>
+
+      <div class="field">
+        <%= form.label :name, 'Name:' %>
+        <%= form.text_field :name, id: :os_type_name, size: 40 %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    </fieldset>
+  <% end %>
+</div>

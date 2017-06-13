@@ -5,7 +5,7 @@ class CreateDevices < ActiveRecord::Migration[5.1]
       t.string :ip
       t.string :mac
       t.text :description
-      t.decimal :devtype
+      t.references :device_type, foreign_key: true
 
       t.timestamps
     end

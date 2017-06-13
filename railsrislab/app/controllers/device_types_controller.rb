@@ -4,7 +4,7 @@ class DeviceTypesController < ApplicationController
   # GET /device_types
   # GET /device_types.json
   def index
-    @device_types = DeviceType.all
+    @device_types = DeviceType.order(:name)
   end
 
   # GET /device_types/1
@@ -28,7 +28,7 @@ class DeviceTypesController < ApplicationController
 
     respond_to do |format|
       if @device_type.save
-        format.html { redirect_to @device_type, notice: 'Device type was successfully created.' }
+        format.html { redirect_to device_types_url, notice: "Device type #{@device_type.name} was successfully created." }
         format.json { render :show, status: :created, location: @device_type }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class DeviceTypesController < ApplicationController
   def update
     respond_to do |format|
       if @device_type.update(device_type_params)
-        format.html { redirect_to @device_type, notice: 'Device type was successfully updated.' }
+        format.html { redirect_to device_types_url, notice: "Device type #{@device_type.name} was successfully updated." }
         format.json { render :show, status: :ok, location: @device_type }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class DeviceTypesController < ApplicationController
   def destroy
     @device_type.destroy
     respond_to do |format|
-      format.html { redirect_to device_types_url, notice: 'Device type was successfully destroyed.' }
+      format.html { redirect_to device_types_url, notice: "Device type #{@device_type.name} was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class DeviceTypesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def device_type_params
-      params.require(:device_type).permit(:Name)
+      params.require(:device_type).permit(:name)
     end
 end

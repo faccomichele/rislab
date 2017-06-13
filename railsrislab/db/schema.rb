@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170612180602) do
+ActiveRecord::Schema.define(version: 20170614170549) do
 
   create_table "device_types", force: :cascade do |t|
-    t.string "Name"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -23,9 +23,26 @@ ActiveRecord::Schema.define(version: 20170612180602) do
     t.string "ip"
     t.string "mac"
     t.text "description"
-    t.decimal "devtype"
+    t.integer "device_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["device_type_id"], name: "index_devices_on_device_type_id"
+  end
+
+  create_table "os_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "template_volumes", force: :cascade do |t|
+    t.string "name"
+    t.string "iscsiname"
+    t.text "description"
+    t.integer "os_type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["os_type_id"], name: "index_template_volumes_on_os_type_id"
   end
 
   create_table "users", force: :cascade do |t|

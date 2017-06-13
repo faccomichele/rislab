@@ -1,0 +1,37 @@
+<%= form_with(model: template_volume, local: true) do |form| %>
+  <% if template_volume.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(template_volume.errors.count, "error") %> prohibited this template_volume from being saved:</h2>
+
+      <ul>
+      <% template_volume.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :template_volume_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :iscsiname %>
+    <%= form.text_field :iscsiname, id: :template_volume_iscsiname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :template_volume_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :os_type_id %>
+    <%= form.select :os_type_id, OsType.order(:name).collect {|p| [p.name, p.id]}, prompt: 'Select an OS Type' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

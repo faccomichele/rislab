@@ -28,6 +28,9 @@
         <% end %>
         <% if session[:user_id] %>
           <ul>
+            <li><%= link_to 'OS Types', os_types_path %></li>
+            <li><%= link_to 'Template Volumes', template_volumes_path %></li>
+            <li><%= link_to 'Device Types', device_types_path %></li>
             <li><%= link_to 'Devices', devices_path %></li>
             <li><%= link_to 'Users', users_path %></li>
           </ul>

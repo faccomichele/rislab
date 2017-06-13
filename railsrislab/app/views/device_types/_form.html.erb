@@ -1,22 +1,29 @@
-<%= form_with(model: device_type, local: true) do |form| %>
-  <% if device_type.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(device_type.errors.count, "error") %> prohibited this device_type from being saved:</h2>
+<div class='rislab_form'>
+  <%= form_for @device_type do |form| %>
+    <% if @device_type.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@device_type.errors.count, "error") %> prohibited this device_type from being saved:</h2>
 
-      <ul>
-      <% device_type.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+        <ul>
+          <% @device_type.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <fieldset>
+      <legend>Enter Device Type Details</legend>
+
+      <div class="field">
+        <%= form.label :name, 'Name:' %>
+        <%= form.text_field :name, id: :device_type_name, size: 40 %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    </fieldset>
+    
   <% end %>
-
-  <div class="field">
-    <%= form.label :Name %>
-    <%= form.text_field :Name, id: :device_type_Name %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
