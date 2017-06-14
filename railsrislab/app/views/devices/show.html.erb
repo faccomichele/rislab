@@ -22,7 +22,7 @@
 
 <p>
   <strong>Device type:</strong>
-  <%= @device.device_type %>
+  <%= @device_types.find{|device_type| device_type.id == @device.device_type_id}.name %>
 </p>
 
 <%= link_to 'Edit', edit_device_path(@device) %> |

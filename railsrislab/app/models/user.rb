@@ -8,9 +8,9 @@ class User < ApplicationRecord
 
   private
     def ensure_an_admin_remains
-      if User.count.zero?
-        raise Error.new "Can't delete last user"
+      if User.where(administrator: true).count.zero?
+        raise Error.new "Can't delete last administrative user"
       end
     end
-    
+
 end

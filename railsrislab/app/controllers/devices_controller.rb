@@ -5,11 +5,13 @@ class DevicesController < ApplicationController
   # GET /devices.json
   def index
     @devices = Device.order(:name)
+    @device_types = DeviceType.all
   end
 
   # GET /devices/1
   # GET /devices/1.json
   def show
+    @device_types = DeviceType.all
   end
 
   # GET /devices/new

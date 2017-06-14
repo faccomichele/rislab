@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+    #user = User.find_by(name: params[:name], administrator: true)
     user = User.find_by(name: params[:name])
     #if user.try(:authenticate, params[:password])
     if user&.authenticate(params[:password])
