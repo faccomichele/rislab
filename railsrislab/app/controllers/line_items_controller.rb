@@ -28,7 +28,10 @@ class LineItemsController < ApplicationController
   # POST /line_items.json
   def create
     device = Device.find_by(id: params[:device_id])
-    @line_item = @cart.line_items.build(device: device)
+    #test
+    template_volume = TemplateVolume.find_by(id: 2)
+    #test
+    @line_item = @cart.line_items.build(device: device, template_volume: template_volume)
 
     respond_to do |format|
       if @line_item.save
