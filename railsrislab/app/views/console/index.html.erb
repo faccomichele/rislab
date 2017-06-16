@@ -10,7 +10,9 @@
         <h3><%= device.name %></h3>
         <%= sanitize(device.description) %>
         <div class="type_line">
-          <span class="type"></span>
+          <span class="type">
+          </span>
+          <%= button_to 'Add to Cart', line_items_path(device_id: device) %>
         </div>
       </div>
     <% end %>

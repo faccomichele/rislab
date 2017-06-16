@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170614170550) do
+ActiveRecord::Schema.define(version: 20170616133004) do
+
+  create_table "carts", force: :cascade do |t|
+    t.integer "user_id"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_carts_on_user_id"
+  end
 
   create_table "device_types", force: :cascade do |t|
     t.string "name"
@@ -27,6 +36,17 @@ ActiveRecord::Schema.define(version: 20170614170550) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["device_type_id"], name: "index_devices_on_device_type_id"
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    t.integer "device_id"
+    t.integer "template_volume_id"
+    t.integer "cart_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cart_id"], name: "index_line_items_on_cart_id"
+    t.index ["device_id"], name: "index_line_items_on_device_id"
+    t.index ["template_volume_id"], name: "index_line_items_on_template_volume_id"
   end
 
   create_table "os_types", force: :cascade do |t|

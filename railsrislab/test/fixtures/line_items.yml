@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  device: one
+  template_volume: one
+  cart: one
+
+two:
+  device: two
+  template_volume: two
+  cart: two
