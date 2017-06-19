@@ -1,20 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Your Pragmatic List</h1>
+<h1>Device List</h1>
 
-<% cache @devices do %>
-  <% @devices.each do |device| %>
-    <% cache device do %>
-      <div class="entry">
-        <%-# image_tag(product.image_url) -%>
-        <h3><%= device.name %></h3>
-        <%= sanitize(device.description) %>
-        <div class="type_line">
-          <span class="type">
-          </span>
-          <%= button_to 'Add to Cart', line_items_path(device_id: device) %>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
-<% end %>
+<%= render 'form', devices: @devices, template_volumes: @template_volumes %>

@@ -10,16 +10,14 @@
 
   <body class='<%= controller.controller_name %>'>
     <div id="banner">
-      <%= image_tag 'logo.svg', alt: 'The Pragmatic Bookshelf', size: '56x60' %>
+      <%= image_tag 'logo.png', alt: 'EMEA IDS LAB', size: '320x62' %>
       <span class="title"><%= @page_title %></span>
     </div>
     <div id="columns">
       <div id="side">
         <ul>
-          <li><a href="http://www....">Home</a></li>
-          <li><a href="http://www..../faq">Question</a></li>
-          <li><a href="http://www..../news">News</a></li>
-          <li><a href="http://www..../contact">Contact</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/calendar">Calendar</a></li>
         </ul>
         <% if !session[:user_id] %>
           <ul>

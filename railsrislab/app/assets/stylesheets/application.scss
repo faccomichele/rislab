@@ -18,18 +18,18 @@ body, body > p, body > ol, body > ul, body > td {margin: 8px !important}
 #banner {
   position: relative;
   min-height: 40px;
-  background: #9c9;
+  background: rgb(0, 126, 184);
   padding: 10px;
   border-bottom: 2px solid;
   font: small-caps 40px/40px "Times New Roman", serif;
-  color: #282;
+  color: rgb(0, 126, 184);
   text-align: center;
 
   img {
     position: absolute;
     top: 0;
     left: 0;
-    width: 192px;
+    width: 320px;
   }
 }
 
@@ -58,7 +58,7 @@ body, body > p, body > ol, body > ul, body > td {margin: 8px !important}
 
   #side {
     padding: 1em 2em;
-    background: #141;
+    background: rgb(0, 126, 184);
 
     ul {
       padding: 0;
@@ -67,7 +67,7 @@ body, body > p, body > ol, body > ul, body > td {margin: 8px !important}
         list-style: none;
 
         a {
-          color: #bfb;
+          color: white;
           font-size: small;
         }
       }
