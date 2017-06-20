@@ -9,11 +9,13 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     @orders = Order.all
+    @users = User.all
   end
 
   # GET /orders/1
   # GET /orders/1.json
   def show
+    @users = User.all
   end
 
   # GET /orders/new
@@ -71,7 +73,7 @@ class OrdersController < ApplicationController
 
   rescue_from 'Order::Error' do |exception|
     #redirect_to console_index_url, notice: exception.message
-    redirect_to @order, notice: exception.message
+    render :new
   end
 
   private

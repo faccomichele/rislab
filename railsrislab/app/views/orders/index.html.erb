@@ -15,7 +15,7 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.user %></td>
+        <td><%= @users.find{|user| user.id == order.user_id}.name %></td>
         <td><%= order.start_time %></td>
         <td><%= order.end_time %></td>
         <td><%= link_to 'Show', order %></td>

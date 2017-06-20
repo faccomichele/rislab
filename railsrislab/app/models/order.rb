@@ -23,7 +23,8 @@ class Order < ApplicationRecord
         overlapping_orders.each do |order|
           overlapping_device = LineItem.find_by(device_id: item.device_id, order_id: order.id)
           unless overlapping_device.blank?
-            raise Error.new "One or more devices have already been booked for the selected timeframe"
+            errors.add(:base, 'One or more devices you chose have already been booked for this timeframe')
+            raise Error.new
           end
         end
       end

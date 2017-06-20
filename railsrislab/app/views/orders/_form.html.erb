@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :user_id %>
+    <%= form.label :user_id, "User" %>
     <%= form.select :user_id, User.order(:name).collect {|p| [p.name, p.id]}, prompt: 'Select yourself'  %>
   </div>
 
   <div class="field">
-    <%= form.label :start_time %>
-    <%= form.datetime_select :start_time, id: :order_start_time %>
+    <%= form.label :start_time, "Start" %>
+    <%= form.datetime_select :start_time, id: :order_start_time, ampm: true %>
   </div>
 
   <div class="field">
-    <%= form.label :end_time %>
-    <%= form.datetime_select :end_time, id: :order_end_time %>
+    <%= form.label :end_time, "End" %>
+    <%= form.datetime_select :end_time, id: :order_end_time, default: 1.hours.from_now, ampm: true %>
   </div>
 
   <div class="actions">
