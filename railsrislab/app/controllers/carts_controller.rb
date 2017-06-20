@@ -59,7 +59,7 @@ class CartsController < ApplicationController
     @cart.destroy if @cart.id == session[:cart_id]
     session[:cart_id] = nil
     respond_to do |format|
-      format.html { redirect_to console_index_url, notice: 'Your cart is currently empty' }
+      format.html { redirect_to console_index_url }
       format.json { head :no_content }
     end
   end
@@ -72,7 +72,7 @@ class CartsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cart_params
-      params.require(:cart).permit(:user_id, :start_time, :end_time)
+      params.require(:cart).permit()
     end
 
     #

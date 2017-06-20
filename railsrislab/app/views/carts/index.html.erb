@@ -5,9 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>User</th>
-      <th>Start time</th>
-      <th>End time</th>
+      <th>Id</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,9 +13,7 @@
   <tbody>
     <% @carts.each do |cart| %>
       <tr>
-        <td><%= cart.user %></td>
-        <td><%= cart.start_time %></td>
-        <td><%= cart.end_time %></td>
+        <td><%= cart.id %></td>
         <td><%= link_to 'Show', cart %></td>
         <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
         <td><%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
