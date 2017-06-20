@@ -29,6 +29,7 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
+    @order.devices_not_in_use_by_other_orders_in_this_timeframe(@cart)
     @order.add_line_items_from_cart(@cart)
 
     respond_to do |format|
@@ -66,6 +67,11 @@ class OrdersController < ApplicationController
       format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  rescue_from 'Order::Error' do |exception|
+    #redirect_to console_index_url, notice: exception.message
+    redirect_to @order, notice: exception.message
   end
 
   private
