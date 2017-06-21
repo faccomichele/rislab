@@ -1,14 +1,13 @@
-FROM centos:7.3.1611
+FROM python:2.7.13
 
 MAINTAINER Michele Facco <faccomichele@gmail.com>
 
-ENV dir /rislab
+ ENV PYTHONUNBUFFERED 1
+ RUN mkdir /code
+ WORKDIR /code
+ ADD requirements.txt /code/
+ RUN pip install -r requirements.txt
+ ADD . /code/
 
-RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
-RUN mkdir ${dir}
-WORKDIR ${dir}
-ADD Gemfile ${dir}/Gemfile
-ADD Gemfile.lock ${dir}/Gemfile.lock
-RUN bundle install
-ADD railsrislab/ ${dir}
-RUN bundle install
+
+docker-compose run web django-admin.py startproject composeexample .
