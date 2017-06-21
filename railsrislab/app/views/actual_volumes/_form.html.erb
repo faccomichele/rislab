@@ -1,0 +1,27 @@
+<%= form_with(model: actual_volume, local: true) do |form| %>
+  <% if actual_volume.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(actual_volume.errors.count, "error") %> prohibited this actual_volume from being saved:</h2>
+
+      <ul>
+      <% actual_volume.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :template_volume_id %>
+    <%= form.text_field :template_volume_id, id: :actual_volume_template_volume_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :iscsiname %>
+    <%= form.text_field :iscsiname, id: :actual_volume_iscsiname %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

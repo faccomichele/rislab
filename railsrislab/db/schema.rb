@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170620100107) do
+ActiveRecord::Schema.define(version: 20170621112600) do
+
+  create_table "actual_volumes", force: :cascade do |t|
+    t.integer "template_volume_id"
+    t.string "iscsiname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["template_volume_id"], name: "index_actual_volumes_on_template_volume_id"
+  end
 
   create_table "carts", force: :cascade do |t|
     t.integer "user_id"

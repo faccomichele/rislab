@@ -1,0 +1,7 @@
+version: '3'
+services:
+  racadm:
+    build: .
+    command: racadm -r 192.168.53.30 -u root -p calvin getsysinfo
+    ports:
+     - "8001:3000"

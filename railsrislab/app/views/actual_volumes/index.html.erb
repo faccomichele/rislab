@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Actual Volumes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Template volume</th>
+      <th>Iscsiname</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @actual_volumes.each do |actual_volume| %>
+      <tr>
+        <td><%= actual_volume.template_volume %></td>
+        <td><%= actual_volume.iscsiname %></td>
+        <td><%= link_to 'Show', actual_volume %></td>
+        <td><%= link_to 'Edit', edit_actual_volume_path(actual_volume) %></td>
+        <td><%= link_to 'Destroy', actual_volume, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Actual Volume', new_actual_volume_path %>

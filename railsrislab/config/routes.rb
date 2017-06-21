@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :actual_volumes
   get 'calendar/index'
 
   resources :orders

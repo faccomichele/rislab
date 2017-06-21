@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Template volume:</strong>
+  <%= @actual_volume.template_volume %>
+</p>
+
+<p>
+  <strong>Iscsiname:</strong>
+  <%= @actual_volume.iscsiname %>
+</p>
+
+<%= link_to 'Edit', edit_actual_volume_path(@actual_volume) %> |
+<%= link_to 'Back', actual_volumes_path %>
