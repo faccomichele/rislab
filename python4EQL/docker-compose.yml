@@ -1,10 +1,10 @@
 version: '3'
 
 services:
-  web4EQL:
+  web4eql:
     build: .
     command: python2 manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/code
+      - ./djangorislab:/rislab
     ports:
       - "8000:8000"

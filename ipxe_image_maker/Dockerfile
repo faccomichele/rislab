@@ -21,3 +21,11 @@ cd ipxe-master/src/
 make bin/undionly.kpxe
 
 now you can do: cp bin/undionly.kpxe /tftpboot/
+
+
+    gcc (version 3 or later)
+    binutils (version 2.18 or later)
+    make
+    perl
+    syslinux (for isolinux, only needed for building .iso images)
+    liblzma or xz header files
