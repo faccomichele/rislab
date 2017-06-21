@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'calendar/index'
+
   resources :orders
   resources :line_items
   resources :carts
@@ -17,6 +19,8 @@ Rails.application.routes.draw do
   get 'sessions/create'
 
   get 'sessions/destroy'
+
+  get 'calendar' => 'calendar#index'
 
   resources :users
   resources :device_types

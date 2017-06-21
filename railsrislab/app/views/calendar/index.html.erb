@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Calendar</h1>
+
+<% cache @devices do %>
+  <% @devices.each do |device| %>
+    <% cache device do %>
+      <div class="entry">
+        <h3><%= device.name %></h3>
+        <ul class="type_line">
+          <% device.orders.order(:start_time, :end_time).each do |order| %>
+            <li class="type">
+              From: <%= order.start_time %>
+              To: <%= order.end_time %>
+              Booked by: <%= @users.find{|user| user.id == order.user_id}.name %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
