@@ -1,31 +1,11 @@
-FROM centos:7.3.1611
+FROM debian:7.11
 
 MAINTAINER Michele Facco <faccomichele@gmail.com>
 
-ENV dir /rislab
+ENV gitdir /ipxe
 
-RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
-RUN mkdir ${dir}
-WORKDIR ${dir}
-ADD Gemfile ${dir}/Gemfile
-ADD Gemfile.lock ${dir}/Gemfile.lock
-RUN bundle install
-ADD railsrislab/ ${dir}
-RUN bundle install
-
-
-
-
-git clone git://git.ipxe.org/ipxe.git
-cd ipxe-master/src/
-make bin/undionly.kpxe
-
-now you can do: cp bin/undionly.kpxe /tftpboot/
-
-
-    gcc (version 3 or later)
-    binutils (version 2.18 or later)
-    make
-    perl
-    syslinux (for isolinux, only needed for building .iso images)
-    liblzma or xz header files
+RUN apt-get update -qq && apt-get install -y git make gcc liblzma-dev
+RUN mkdir /rislab
+RUN mkdir ${gitdir}
+WORKDIR ${gitdir}
+RUN git clone git://git.ipxe.org/ipxe.git
