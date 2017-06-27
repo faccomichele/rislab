@@ -2,6 +2,6 @@ version: '3'
 services:
   ipxe:
     build: .
-    command: make bin/undionly.kpxe EMBED=/rislab/custom_script.ipxe && cp -f bin/undionly.kpxe /rislab/boot.kpxe
+    command: /rislab/generate_n_copy.sh
     volumes:
      - ./shared:/rislab
