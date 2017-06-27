@@ -4,4 +4,5 @@ services:
     build: .
     command: /bin/bash
     ports:
-     - "8001:3000"
+     - "53:53"
+     - "69:69"
