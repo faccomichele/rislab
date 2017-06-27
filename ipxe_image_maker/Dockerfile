@@ -9,3 +9,4 @@ RUN mkdir /rislab
 RUN mkdir ${gitdir}
 WORKDIR ${gitdir}
 RUN git clone git://git.ipxe.org/ipxe.git
+WORKDIR ${gitdir}/ipxe/src
