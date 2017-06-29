@@ -4,5 +4,5 @@ services:
     build: .
     command: /bin/bash
     ports:
-     - "53:53"
+     - "67:67"
      - "69:69"
