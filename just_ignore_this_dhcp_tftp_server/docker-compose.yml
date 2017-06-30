@@ -1,7 +1,0 @@
-version: '3'
-services:
-  dhcp:
-    build: .
-    command: /bin/bash
-    ports:
-     - "8001:3000"
