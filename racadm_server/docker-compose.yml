@@ -3,3 +3,7 @@ services:
   racadm:
     build: .
     command: /bin/bash
+    ports:
+      - "8080:80"
+    volumes:
+      - ./rislabracadmapi:/var/www/rislab
