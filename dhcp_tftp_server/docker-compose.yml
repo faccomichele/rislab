@@ -2,7 +2,7 @@ version: '3'
 services:
   dhcp:
     build: .
-    command: /bin/bash
+    command: ./start_services.sh
     ports:
      - "67:67"
      - "69:69"
