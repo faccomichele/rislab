@@ -13,5 +13,5 @@ ADD ${ldir}/etc_default_isc-dhcp-server /etc/default/isc-dhcp-server
 ADD ${ldir}/etc_default_tftpd-hpa /etc/default/tftpd-hpa
 ADD ${ldir}/boot.kpxe ${dir}/boot.kpxe
 
-RUN service tftpd-hpa start
-RUN service isc-dhcp-server start
+RUN update-rc.d tftpd-hpa enable && service tftpd-hpa start
+RUN update-rc.d isc-dhcp-server enable && service isc-dhcp-server start
